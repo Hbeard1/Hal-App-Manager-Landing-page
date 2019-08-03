@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>
+			HAL App Manager 1.0 
+		</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Shop the Nadscollections.com official site. Discover the latest ready to wear, handbags, shoes and accessories collections by Nadia Persaud.">
+		<meta name="keywords" content="handbags,shoes,accessories,Nadscollections, Nadia Persaud">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	</head>
+	
+	<body>
+		<main> <!--main container -->
+			<nav class="logo"> <!--nav bar -->
+				<div>
+					<h1>HAL App Manager</h1>
+				</div>
+			</nav> <!--end of nav bar -->
+			
+			<div class="content"> <!--content container -->
+			
+				<div class="image"> <!--main image -->
+					<img id="imagess" src="#" alt="HAL Phone Icon" >
+				</div> <!--closing image -->
+				
+				<article> <!--text container -->
+					<div class="title"><!--main title for text-->
+						<h2> The Application Manger </br> You've Been Waiting For</h2>
+					</div><!--closing title-->
+					
+					<div class="text"> <!--main text for content -->
+						<p>Introducing the ultimate application launcher for ios and Android. With more power to control multiple applications at once, you've never had so much control. 
+						Get on the early access list to get access to in app perks only avalaible to our early subscribers.</p>
+					</div> <!--closing main text -->
+					
+					<div class="button"> <!--button for content -->
+						<h2 id="button">
+						<a href="#">
+						Get On The List!
+						</a>
+						</h2>
+					</div> <!--closing button -->	
+					
+				</article> <!--closing text container -->
+				
+			</div> <!--closing content container -->
+			
+			<div class="call"> <!--call to action container -->
+				<div class="action_head"><!--call to action heading -->
+					<h2>
+					GET EXLUSIVE IN APP PERKS BY SIGNING UP BEFORE OUR OFFICIAL LAUNCH!
+					</h2>
+				</div> <!--end of call to action heading -->
+				
+				<div class="timer"> <!--timer container -->
+					<div id="day"> <!--day counter -->
+					
+					</div> <!--end of day counter -->
+					
+					<div id="hour"> <!--hour counter -->
+					
+					</div> <!--end of hour counter -->
+					
+					<div id="minute"><!--min counter -->
+					
+					</div> <!--end of min counter -->
+					
+					<div id="sec"> <!--sec counter -->
+					
+					</div> <!--end of sec counter -->
+				</div> <!--end of timer container  -->
+				
+			</div><!--end of call to action container -->
+		</main> <!--end of main container -->
+	
+		<script>
+			var i= 0; // starting image
+			var images= []; //image array empty-array
+			var time= 2000; //2 sec time interval
+			
+			//image list for image array
+			images[0] = 'image_1.png'; //image array starting image 
+			images[1] = 'image_2.png';
+			images[2] = 'image_3.png';
+			
+			//change image function
+			function changeImg(){
+				document.getElementById("imagess").src = images[i]; //changes image on html side
+				
+				if(i < images.length-1){ //if var i is less then the length of the array add one, length -1 because array list start with 0 and ends with 2. 
+					i++;
+				} else{ // if var is more the array length set it back to 0 to start the slide again
+					i = 0;
+				}
+				
+				setTimeout("changeImg()", time);// the amount of time before the function run if statment 
+			}
+			
+			window.onload = changeImg; //when sites loads run script
+		
+		</script>
+	
+		<script>
+			// Set the date we're counting down to
+			var countDownDate = new Date("Nov 5, 2020 15:37:25").getTime();
+
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+
+			  // Get today's date and time
+			var now = new Date().getTime();
+
+			  // Find the distance between now and the count down date
+			var distance = countDownDate - now;
+
+			  // Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			  // Display the result in the element with id="day"
+			document.getElementById("day").innerHTML = "<h2>"+days+"</h2>" + "<h3>Day</h3>";
+			document.getElementById("hour").innerHTML = "<h2>"+hours+"</h2>" + "<h3>Hour</h3>";
+			document.getElementById("minute").innerHTML = "<h2>"+minutes+"</h2>" + "<h3>Minutes</h3>";
+			document.getElementById("sec").innerHTML = "<h2>"+seconds+"</h2>" + "<h3>Seconds</h3>";
+
+			  // If the count down is finished, write some text 
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("day").innerHTML = days + "<h3>Expire</h3>";
+				document.getElementById("hour").innerHTML = hours + "<h3>Expire</h3>";
+				document.getElementById("minute").innerHTML = minutes + "<h3>Expire</h3>";
+				document.getElementById("sec").innerHTML = seconds + "<h3>Expire</h3>";
+			  }
+			}, 1000);
+		</script>
+	</body>
+	
+	
+	
+	
+	
+</html>
